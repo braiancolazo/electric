@@ -1,0 +1,25 @@
+<!-- BUILD IT FROM HERE https://getbootstrap.com/docs/5.3/content/tables/#striped-rows -->
+ 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th >Cliente</th>
+            <th >Fecha</th>
+            <th >Modulos</th>
+            <th >Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of lst; track $index) {
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.client}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.module.length + 1 }}</td>
+                <td><button (click)="mostrar(item)">boton</button></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

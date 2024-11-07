@@ -1,0 +1,54 @@
+<!-- BUILT IT FROM:
+https://getbootstrap.com/docs/5.3/forms/form-control/#example
+https://getbootstrap.com/docs/5.3/forms/select/#default
+https://getbootstrap.com/docs/5.3/forms/select/#default -->
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" formControlName="nombre">
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="date" formControlName="fecha">
+        </div>
+
+        <div>
+            <h4>Eventos:</h4>
+            <button type="button" (click)="onNewModule()">+</button>
+            <div class="row" formArrayName="modulos">
+              @for (item of modulos.controls; track $index) {
+                <div class="col-6">
+                  <button type="button" (click)="onDeleteEvent($index)">x</button>
+                  <div [formGroupName]="$index">
+                    <h6>Modulos #{{$index + 1}}</h6>
+                      <select name="" id="" formControlName="type2">
+                        <option value="" disabled>selected</option>
+                        @for (t of types; track $index) {
+                          <option value="{{t.name}}">{{t.name}}</option>
+                        }
+                      </select>
+
+                      <select name="" id=""  formControlName="ambiente2">
+                        <option value="" disabled>selected</option>
+                        @for (z of zones | keyvalue; track $index) {
+                          <option [value]="z.value">{{z.value}}</option>
+                        } 
+                      </select>
+                    <div>
+                      <label for="inputMinutes" class="form-label">precio</label>
+                      <input formControlName="minutes" type="number" class="form-control" id="inputMinutes" formControlName="precio2" readonly>
+                    </div>
+                    <div>
+                      <label for="inputSeconds" class="form-label">lugares</label>
+                      <input formControlName="seconds" type="text" class="form-control" id="inputSeconds" formControlName="lugares2" readonly> 
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+            </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

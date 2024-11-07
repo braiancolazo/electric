@@ -1,0 +1,37 @@
+<!-- BUILD IT FROM HERE https://getbootstrap.com/docs/5.3/components/card/#sizing -->
+<div class="container">
+    <h3>Presupuesto Prueba#1</h3>
+    <p>Cajas necesarias: <b>{{caja}}</b></p>
+    <p>Comedor</p>
+    @for (item of budget.module; track $index) {
+        <p>
+           
+                {{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}
+            
+        </p>
+    }
+ <!-- @for (item of budget.module; track $index) {
+    <p>
+        @if(item.zone== 'Comedor'){
+            {{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}
+        }
+        
+    </p>
+    @if(item.zone =="Living"){
+       
+    }
+    <p>Comedor</p>
+    @if(item.zone =='Comedor'){
+        <p>{{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}</p>
+    }
+    <p>Dormitorio</p>
+    @if(item.zone =="Dormitorio"){
+        <p>{{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}</p>
+    }
+    <p>Cocina</p>
+    @if(item.zone =="Cocina"){
+        <p>{{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}</p>
+    }
+ }
+ <p>Total Cotizacion: {{total}}</p> -->
+</div>
