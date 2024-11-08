@@ -56,10 +56,16 @@ https://getbootstrap.com/docs/5.3/forms/select/#default -->
                           <option [value]="z.value">{{z.value}}</option>
                         } 
                       </select>
-                    <div>
-                      <label for="inputMinutes" class="form-label">precio</label>
-                      <input formControlName="minutes" type="number" class="form-control" id="inputMinutes" formControlName="precio2" readonly>
-                    </div>
+                    <div > 
+                      <label for="precio">Precio</label>
+                      <div class="input-group"> 
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span> 
+                        </div> 
+                        <input type="number" class="form-control" id="precio" formControlName="precio2"> 
+                      </div> 
+                    </div> 
+                    
                     <div>
                       <label for="inputSeconds" class="form-label">lugares</label>
                       <input formControlName="seconds" type="text" class="form-control" id="inputSeconds" formControlName="lugares2" readonly> 

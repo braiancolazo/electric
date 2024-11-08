@@ -11,13 +11,11 @@ export const routes: Routes = [
         path:"new", component:BudgetFormComponent
     },
     {
-        path:"view", component:BudgetViewComponent
+        path:"view",  loadComponent: () => import('./budget-view/budget-view.component').then(r => r.BudgetViewComponent)
     },
     {
         path:"",component:BudgetListComponent
     }
-    // {
-    //     path:"view",  loadChildren: () => import('./budget-view/budget-view.component').then(r => r.BudgetViewComponent)
-    // }
+  
 
 ];
