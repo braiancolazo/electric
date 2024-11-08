@@ -2,36 +2,18 @@
 <div class="container">
     <h3>Presupuesto Prueba#1</h3>
     <p>Cajas necesarias: <b>{{caja}}</b></p>
-    <p>Comedor</p>
-    @for (item of budget.module; track $index) {
-        <p>
-           
-                {{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}
-            
-        </p>
-    }
- <!-- @for (item of budget.module; track $index) {
-    <p>
-        @if(item.zone== 'Comedor'){
-            {{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}
+    @for (z of zones | keyvalue; track $index) {
+        <p>{{z.value | uppercase}}</p>
+        @for (item of budget.module; track $index) {
+            @if(item.zone === z.value){
+                <p>
+                    {{item.moduletype.name}} ({{item.moduletype.slots }}) - $ {{item.moduletype.price}}
+                </p>
+            }
         }
-        
-    </p>
-    @if(item.zone =="Living"){
-       
     }
-    <p>Comedor</p>
-    @if(item.zone =='Comedor'){
-        <p>{{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}</p>
-    }
-    <p>Dormitorio</p>
-    @if(item.zone =="Dormitorio"){
-        <p>{{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}</p>
-    }
-    <p>Cocina</p>
-    @if(item.zone =="Cocina"){
-        <p>{{item.moduletype.name}} ({{$index }}) - {{item.moduletype.price | currency}}</p>
-    }
- }
- <p>Total Cotizacion: {{total}}</p> -->
+    
+ <p>Total Cotizacion: <b>{{total | currency}}</b></p> 
+
+ <a routerLink="/list" >volver</a>
 </div>

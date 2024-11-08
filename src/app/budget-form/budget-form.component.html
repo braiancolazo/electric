@@ -7,14 +7,35 @@ https://getbootstrap.com/docs/5.3/forms/select/#default -->
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombre" formControlName="nombre">
+            @if(form.controls['nombre'].invalid && form.controls['nombre'].touched){
+              @if(form.controls['nombre'].errors?.['required']){
+              <div class="text-danger">Nombre obligatorio</div>
+              }
+              @if(form.controls['nombre'].errors?.['clienteUnico']){
+                <div class="text-danger">Esta persona ya tiene un presupuesto</div>
+                }
+            }
         </div>
         <div class="mb-3">
             <label for="date" class="form-label">Fecha</label>
             <input type="date" class="form-control" id="date" formControlName="fecha">
+            @if(form.controls['fecha'].invalid && form.controls['fecha'].touched){
+              @if(form.controls['fecha'].errors?.['required']){
+              <div class="text-danger">La fecha es obligatoria</div>
+              }
+              @if(form.controls['fecha'].errors?.['greaterThanToday']){
+                <div class="text-danger">La fecha no tiene que ser mayor que la de hoy</div>
+                }
+            }
         </div>
-
+      
         <div>
-            <h4>Eventos:</h4>
+          @if(form.controls['modulos'].invalid && form.controls['modulos'].touched){
+            @if(form.controls['modulos'].errors?.['minModules']){
+            <div class="text-danger">Debe cargar almenos 5 modulos</div>
+            }
+          }
+            <h4>Modulos:</h4>
             <button type="button" (click)="onNewModule()">+</button>
             <div class="row" formArrayName="modulos">
               @for (item of modulos.controls; track $index) {
@@ -49,6 +70,7 @@ https://getbootstrap.com/docs/5.3/forms/select/#default -->
             </div>
             </div>
 
+        <button type="button" class="btn btn-danger" routerLink="/list">volver</button>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

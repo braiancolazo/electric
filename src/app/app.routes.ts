@@ -13,6 +13,9 @@ export const routes: Routes = [
     {
         path:"view", component:BudgetViewComponent
     },
+    {
+        path:"",component:BudgetListComponent
+    }
     // {
     //     path:"view",  loadChildren: () => import('./budget-view/budget-view.component').then(r => r.BudgetViewComponent)
     // }

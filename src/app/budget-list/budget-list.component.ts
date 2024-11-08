@@ -43,9 +43,10 @@ export class BudgetListComponent implements OnInit,OnDestroy{
 
     llenarTabla(){
       this.budgetService.getAll().subscribe({
-        next: (value:Budget[]) => [
+        next: (value:Budget[]) => {
           this.lst = value
-        ],
+          console.log(value)
+        },
         error: () => {
           alert('error al cargar la lst')
         }
@@ -55,6 +56,7 @@ export class BudgetListComponent implements OnInit,OnDestroy{
     mostrar(budget:Budget) {
       this.router.navigate(['/view'],{state:{budget}})
     }
+
 
 
 }

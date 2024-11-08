@@ -2,20 +2,128 @@
   "budgets": [
     {
       "id": "",
-      "client": "Braian",
-      "date": "2024-11-06",
-      "moduletype": [
+      "client": "hola",
+      "date": "2024-11-07",
+      "module": [
         {
-          "name": "Interruptor simple",
-          "zone": "Comedor",
-          "price": 1000,
-          "slots": 1
+          "zone": "Dormitorio",
+          "moduletype": {
+            "id": "1",
+            "name": "Interruptor simple",
+            "slots": 1,
+            "price": 1000
+          }
         },
         {
-          "type2": "Toma corriente triple",
-          "ambiente2": "Comedor",
-          "precio2": 1700,
-          "lugares2": 3
+          "zone": "Living",
+          "moduletype": {
+            "id": "6",
+            "name": "USB",
+            "slots": 1,
+            "price": 5000
+          }
+        },
+        {
+          "zone": "Dormitorio",
+          "moduletype": {
+            "id": "6",
+            "name": "USB",
+            "slots": 1,
+            "price": 5000
+          }
+        },
+        {
+          "zone": "Comedor",
+          "moduletype": {
+            "id": "5",
+            "name": "Toma corriente triple",
+            "slots": 3,
+            "price": 1700
+          }
+        }
+      ]
+    },
+    {
+      "id": "",
+      "client": "pepe",
+      "date": "2024-11-08",
+      "module": [
+        {
+          "zone": "Living",
+          "moduletype": {
+            "id": "1",
+            "name": "Interruptor simple",
+            "slots": 1,
+            "price": 1000
+          }
+        }
+      ]
+    },
+    {
+      "id": "",
+      "client": "braian",
+      "date": "2024-11-07",
+      "module": [
+        {
+          "zone": "Dormitorio",
+          "moduletype": {
+            "id": "2",
+            "name": "Interruptor doble",
+            "slots": 2,
+            "price": 2000
+          }
+        }
+      ]
+    },
+    {
+      "id": "",
+      "client": "descuentopapita",
+      "date": "2024-11-07",
+      "module": [
+        {
+          "zone": "Cocina",
+          "moduletype": {
+            "id": "2",
+            "name": "Interruptor doble",
+            "slots": 2,
+            "price": 2000
+          }
+        },
+        {
+          "zone": "Dormitorio",
+          "moduletype": {
+            "id": "4",
+            "name": "Toma corriente doble",
+            "slots": 2,
+            "price": 3000
+          }
+        },
+        {
+          "zone": "Cocina",
+          "moduletype": {
+            "id": "3",
+            "name": "Toma corriente simple",
+            "slots": 1,
+            "price": 1500
+          }
+        },
+        {
+          "zone": "Cocina",
+          "moduletype": {
+            "id": "2",
+            "name": "Interruptor doble",
+            "slots": 2,
+            "price": 2000
+          }
+        },
+        {
+          "zone": "Comedor",
+          "moduletype": {
+            "id": "5",
+            "name": "Toma corriente triple",
+            "slots": 3,
+            "price": 1700
+          }
         }
       ]
     }

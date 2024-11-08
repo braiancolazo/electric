@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Budget } from '../models/budget';
+import { Budget, Zone } from '../models/budget';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -16,7 +16,7 @@ export class BudgetViewComponent implements OnInit{
   budget:Budget = {} as Budget;
   caja:number = 0;
   total: number =0;
-
+  zones = Zone
   router = inject(Router)
 
   ngOnInit(): void {
@@ -25,6 +25,17 @@ export class BudgetViewComponent implements OnInit{
     if(!this.budget){
       this.router.navigate(['/list'])
     }
+    this.calcularCajayTotal()
   }
 
+  calcularCajayTotal(){
+    let numero = 0;
+    let total = 0;
+      for (const e of this.budget.module) {
+        numero +=e.moduletype.slots
+        total += e.moduletype.price
+      }
+      this.caja= Math.floor(numero/3)
+      this.total =total
+  }
 }

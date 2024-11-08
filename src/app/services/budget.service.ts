@@ -17,6 +17,9 @@ export class BudgetService {
     const observable = this.http.get<Budget[]>(this.url);
     return observable;
   }
+  getByClient(client :string){
+    return this.http.get<any>(this.url + '?client='+ client)
+  }
 
   add(budget: Budget): Observable<Budget> {
     return this.http.post<Budget>(
